@@ -4,9 +4,39 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: #66d5fa;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
+}
+
+.burger {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: #be1067; /*  цвет текста навигационных кнопок */
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: #ff1493; /*  при наведении */
+}
+
+.nav-links.active {
+    display: block; /*  при активации */
 }
 
 .container {
@@ -16,6 +46,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
+    margin: 20px auto; /* Центрировать контейнер */
 }
 
 h1 {
@@ -41,7 +72,7 @@ button {
     padding: 10px;
     border: none;
     border-radius: 4px;
-    background-color: #66d5fa; /*  цвет кнопки добавить */
+    background-color: #66d5fa; /* цвет кнопки добавить */
     color: white;
     cursor: pointer;
 }
@@ -74,7 +105,7 @@ li.completed {
 
 li button {
     margin-left: 10px;
-    background-color: #ff69b4; /*  для кнопок задач */
+    background-color: #ff69b4; /* для кнопок задач */
     border-color: #ff1493; /* при наведении */
 }
 
@@ -93,11 +124,27 @@ li button:hover {
     padding: 5px 10px;
     border: none;
     border-radius: 4px;
-    background-color: #85cde5; /*  цвет кнопок фильтров */
+    background-color: #85cde5; /* цвет кнопок фильтров */
     color: white;
     cursor: pointer;
 }
 
 .filter-btn.active {
     background-color: #5095b0; /* для активной кнопки */
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column; 
+        position: absolute;
+        background-color: #66d5fa;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        padding: 10px 0;
+    }
+    .nav-links.active {
+        display: flex; 
+    }
 }
