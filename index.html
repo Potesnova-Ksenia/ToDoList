@@ -7,7 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <nav class="navbar">
+        <div class="burger" id="burger">
+            &#9776; 
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#todo">To-Do List</a></li>
+            <li><a href="#about">О проекте</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+    </nav>
+    <div class="container" id="todo">
         <h1>To-Do List</h1>
         <div class="input-section">
             <input type="text" id="taskInput" placeholder="Введите задачу">
@@ -27,6 +37,8 @@
         const filterAll = document.getElementById('filterAll');
         const filterCompleted = document.getElementById('filterCompleted');
         const filterUncompleted = document.getElementById('filterUncompleted');
+        const burger = document.getElementById('burger');
+        const navLinks = document.getElementById('navLinks');
 
         let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
@@ -99,6 +111,11 @@
             filters.forEach(filter => filter.classList.remove('active'));
             activeFilter.classList.add('active');
         }
+
+        // Бургер-меню
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
 
         renderTasks();
     </script>
