@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7c3fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fe4fa7; 
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #ffe4e1; /* поле ввода */
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #66d5fa; /*  цвет кнопки добавить */
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1daaec; /* при наведении */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #fff0f5; /* Лавандовый цвет для задач */
+    border: 1px solid #af8181; /* обводка задачи */
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+
+li button {
+    margin-left: 10px;
+    background-color: #ff69b4; /*  для кнопок задач */
+    border-color: #ff1493; /* при наведении */
+}
+
+li button:hover {
+    background-color: #ff1493; 
+}
+
+.filter-section {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.filter-btn {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #85cde5; /*  цвет кнопок фильтров */
+    color: white;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background-color: #5095b0; /* для активной кнопки */
+}
